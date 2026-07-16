@@ -1,0 +1,12 @@
+{
+  "name": "bookmyfield",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npx concurrently -k -p \"[{name}]\" -n \"backend,business,customer,admin\" -c \"bgBlue.bold,bgGreen.bold,bgMagenta.bold,bgYellow.bold\" \"npm run dev:backend\" \"npm run dev:business\" \"npm run dev:customer\" \"npm run dev:admin\"",
+    "dev:backend": "cd backend && npm run start:dev",
+    "dev:business": "cd frontend/business-dashboard && npm run dev -- -p 3001",
+    "dev:customer": "cd frontend/customer-website && npm run dev -- -p 3002",
+    "dev:admin": "cd frontend/super-admin-dashboard && npm run dev -- -p 3003"
+  }
+}
